@@ -220,7 +220,7 @@ gulp.task('browsersync', function() {
 gulp.task('watcher', function() {
     gulp.watch(PATH.images.in, ['images']);
     gulp.watch(PATH.less.in, ['less']);
-    gulp.watch([PATH.njk.njk, PATH.njk.in] ['html', browsersync.reload]);
+    gulp.watch([PATH.njk.njk, PATH.njk.in], ['html', browsersync.reload]);
   })
 
 

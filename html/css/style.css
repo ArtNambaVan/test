@@ -1,9 +1,14 @@
-div {
+p {
+  color: #f0f;
+}
+.main-nav__section {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-}
-.heading {
-  color: #ff0;
+  -webkit-box-align: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
 }
