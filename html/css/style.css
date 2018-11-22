@@ -1,5 +1,22 @@
-p {
-  color: #f0f;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+     -moz-box-sizing: inherit;
+          box-sizing: inherit;
+}
+* + * {
+  margin-top: 1em;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .main-nav__section {
   display: -webkit-box;

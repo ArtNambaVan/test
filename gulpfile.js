@@ -2,19 +2,24 @@
 const gulp           = require('gulp'),
 
     // gulp plugins
-    changed        = require('gulp-changed'),
-    imagemin       = require('gulp-imagemin'),
-    concat         = require('gulp-concat'),
-    uglify         = require('gulp-uglify'),
-    less           = require('gulp-less'),
-    plumber        = require('gulp-plumber'),
-    nunjucksRender = require('gulp-nunjucks-render'),
+    changed         = require('gulp-changed'),
+    imagemin        = require('gulp-imagemin'),
+    concat          = require('gulp-concat'),
+    uglify          = require('gulp-uglify'),
+    less            = require('gulp-less'),
+    plumber         = require('gulp-plumber'),
+    nunjucksRender  = require('gulp-nunjucks-render'),
+    data            = require('gulp-data'),
+    
 
     // other plugins
-    LessAutoPrefix = require('less-plugin-autoprefix'),
-    browsersync    = require('browser-sync'),
-    del            = require('del')
+    LessAutoPrefix  = require('less-plugin-autoprefix'),
+    browsersync     = require('browser-sync'),
+    del             = require('del'),
+    fs              = require('graceful-fs')
     ;
+
+//let requireUncached = require('require-uncached'),
 
 // Files path
 let PATH;
@@ -169,13 +174,23 @@ gulp.task('js', function() {
 
 // handle nunjucks
 gulp.task('nunjucks', function() {
-
+    //let data = requireUncached('./src/_data/data.json');
     return gulp.src(PATH.njk.in)
         .pipe(changed(PATH.njk.out))
+        .pipe(data(function (file) {
+            DEBUG:
+            var test = fs.readFileSync('./src/_data/data.json', 'utf8');
+            var json = JSON.parse(fs.readFileSync('./src/_data/data.json', 'utf8'));
+            console.log("test: ", test);
+            console.log("json: ", json);
+            return JSON.parse(fs.readFileSync('./src/_data/data.json', 'utf8'));
+        }))
         .pipe(nunjucksRender(NUNJUCKS_DEFAULTS))
         .pipe(gulp.dest(PATH.njk.out))
         ;
 });
+
+
 
 // handle html
 gulp.task('html', ['nunjucks'], function() {

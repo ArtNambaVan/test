@@ -1,0 +1,24 @@
+{
+    "navItems" : [
+        {
+            "title" : "Home",
+            "navActiveItem" : 0
+        },
+        {
+            "title" : "Messages",
+            "navActiveItem" : 1
+        },
+        {
+            "title" : "Analysis",
+            "navActiveItem" : 2
+        },
+        {
+            "title" : "Reports",
+            "navActiveItem" : 3
+        },
+        {
+            "title" : "Newsletter",
+            "navActiveItem" : 4
+        }
+    ]
+}
