@@ -10,6 +10,8 @@ const gulp           = require('gulp'),
     plumber         = require('gulp-plumber'),
     nunjucksRender  = require('gulp-nunjucks-render'),
     data            = require('gulp-data'),
+    cleanCSS        = require('gulp-clean-css'),
+    sourcemaps      = require('gulp-sourcemaps'),
     
 
     // other plugins
@@ -54,17 +56,17 @@ PATH.less = {
     all : PATH.src  + 'css/style.less',
     in  : PATH.src  + 'css/**/*.less',
     out : PATH.dest + 'css/'
-  };
+};
 
 PATH.fonts = {
   in  : PATH.src  + 'fonts/**/*.*',
   out : PATH.dest + 'fonts/'
 };
 
-// PATH.js_libs = {
-//   in  : PATH.src  + 'js/+(modernizr-custom|jquery-ui.min|jquery.min|vue)*.js',
-//   out : PATH.dest + 'js/'
-// };
+PATH.js_libs = {
+  in  : PATH.src  + 'js/+(modernizr-custom|jquery-ui.min|jquery.min|vue)*.js',
+  out : PATH.dest + 'js/'
+};
 
 const SYNC_CONFIG = {
     port   : 3333,
@@ -104,6 +106,15 @@ gulp.task('css', function() {
         ;
 });
 
+gulp.task('css_libs', function() {
+    return gulp.src(PATH.css_libs.in)
+        .pipe(sourcemaps.init())
+        .pipe(cleanCSS())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(PATH.css_libs.out))
+    ;
+  });
+
 gulp.task('less', function() {
     // console.log('**************************');
     // console.log('*** Starting LESS task ***');
@@ -127,7 +138,8 @@ gulp.task('less', function() {
         ;
 });
 
-gulp.task('styles', ['less']);
+
+gulp.task('styles', ['less', 'css_libs']);
 
 // handle fonts
 gulp.task('fonts', function(){
@@ -154,6 +166,18 @@ gulp.task('images', function() {
 });
 
 // handle img
+
+gulp.task('images', function() {
+    // console.log('****************************');
+    // console.log('*** Starting IMAGES task ***');
+    // console.log('****************************');
+
+    return gulp.src(PATH.images.in)
+        .pipe(changed(PATH.images.out))
+        .pipe(imagemin())
+        .pipe(gulp.dest(PATH.images.out))
+        ;
+});
 
 
 gulp.task('pictures', ['images']);
@@ -206,7 +230,7 @@ gulp.task('build',
     [   'styles',
         'fonts',
         'pictures',
-        //'js',
+        'js',
         'html'
     ],
 
