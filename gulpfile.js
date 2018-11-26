@@ -48,7 +48,7 @@ PATH.images = {
 };
 
 PATH.css_libs = {
-    in  : PATH.src  + 'css/libs/bootstrap*.css',
+    in  : PATH.src  + 'css/libs/',
     out : PATH.dest + 'css/libs/'
 };
 
@@ -64,7 +64,7 @@ PATH.fonts = {
 };
 
 PATH.js_libs = {
-  in  : PATH.src  + 'js/+(modernizr-custom|jquery-ui.min|jquery.min|vue)*.js',
+  in  : PATH.src  + 'js/libs/',
   out : PATH.dest + 'js/'
 };
 
@@ -107,8 +107,12 @@ gulp.task('css', function() {
 });
 
 gulp.task('css_libs', function() {
-    return gulp.src(PATH.css_libs.in)
+    return gulp.src([
+            PATH.css_libs.in + 'bootstrap.css',
+            PATH.css_libs.in + 'bootstrap-select.css',
+        ])
         .pipe(sourcemaps.init())
+        .pipe(concat('libs.css'))
         .pipe(cleanCSS())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(PATH.css_libs.out))
@@ -165,20 +169,6 @@ gulp.task('images', function() {
         ;
 });
 
-// handle img
-
-gulp.task('images', function() {
-    // console.log('****************************');
-    // console.log('*** Starting IMAGES task ***');
-    // console.log('****************************');
-
-    return gulp.src(PATH.images.in)
-        .pipe(changed(PATH.images.out))
-        .pipe(imagemin())
-        .pipe(gulp.dest(PATH.images.out))
-        ;
-});
-
 
 gulp.task('pictures', ['images']);
 
@@ -195,6 +185,19 @@ gulp.task('js', function() {
         .pipe(gulp.dest(PATH.js.out))
         ;
 });
+
+gulp.task('js_libs', function() {
+    return gulp.src([
+            PATH.js_libs.in + 'jquery.js',
+            PATH.js_libs.in + 'popper.js',
+            PATH.js_libs.in + 'bootstrap.js'
+        ])
+        .pipe(concat('libs.js'))
+        .pipe(uglify())
+        .pipe(changed(PATH.js_libs.out))
+        .pipe(gulp.dest(PATH.js_libs.out))
+    ;
+  });
 
 // handle nunjucks
 gulp.task('nunjucks', function() {
@@ -230,7 +233,7 @@ gulp.task('build',
     [   'styles',
         'fonts',
         'pictures',
-        'js',
+        'js_libs',
         'html'
     ],
 
@@ -259,8 +262,9 @@ gulp.task('browsersync', function() {
 gulp.task('watcher', function() {
     gulp.watch(PATH.images.in, ['images']);
     gulp.watch(PATH.less.in, ['less']);
+    gulp.watch(PATH.js_libs.in, ['js_libs'])
     gulp.watch([PATH.njk.njk, PATH.njk.in], ['html', browsersync.reload]);
-  })
+})
 
 
 
