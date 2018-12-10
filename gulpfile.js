@@ -12,6 +12,8 @@ const gulp           = require('gulp'),
     data            = require('gulp-data'),
     cleanCSS        = require('gulp-clean-css'),
     sourcemaps      = require('gulp-sourcemaps'),
+    sass            = require('gulp-sass'),
+    autoprefixer    = require('gulp-autoprefixer'),
     
 
     // other plugins
@@ -20,7 +22,7 @@ const gulp           = require('gulp'),
     del             = require('del'),
     fs              = require('graceful-fs')
     ;
-
+    sass.compiler   = require('node-sass')
 //let requireUncached = require('require-uncached'),
 
 // Files path
@@ -58,10 +60,21 @@ PATH.less = {
     out : PATH.dest + 'css/'
 };
 
+PATH.sass = {
+    all : PATH.src + 'css/style.scss',
+    in  : PATH.src + 'css/**/*.scss',
+    out : PATH.dest + 'css/'
+}
+
 PATH.fonts = {
   in  : PATH.src  + 'fonts/**/*.*',
   out : PATH.dest + 'fonts/'
 };
+
+PATH.js = {
+    in  : PATH.src  + 'js/main.js',
+    out : PATH.dest + 'js/'
+}
 
 PATH.js_libs = {
   in  : PATH.src  + 'js/libs/',
@@ -87,6 +100,10 @@ var LESS_PREFIXER = new LessAutoPrefix({
         browsers: ['last 5 versions', 'ie 11', 'Firefox 14']
     });
 
+var SASS_PREFIXER = {
+    browsers: ['last 5 versions', 'ie 11', 'Firefox 14']
+    };
+
 // NUNJUCKS options
 var NUNJUCKS_DEFAULTS = {
     path: 'src/_templates/'
@@ -108,13 +125,11 @@ gulp.task('css', function() {
 
 gulp.task('css_libs', function() {
     return gulp.src([
-            PATH.css_libs.in + 'bootstrap.css',
+            PATH.css_libs.in + 'clay.css',
             PATH.css_libs.in + 'bootstrap-select.css',
+            PATH.css_libs.in + 'main.css',
         ])
-        .pipe(sourcemaps.init())
-        .pipe(concat('libs.css'))
-        .pipe(cleanCSS())
-        .pipe(sourcemaps.write())
+        //.pipe(concat('libs.css'))
         .pipe(gulp.dest(PATH.css_libs.out))
     ;
   });
@@ -142,8 +157,15 @@ gulp.task('less', function() {
         ;
 });
 
+gulp.task('sass', function() {
+    return gulp.src(PATH.sass.all)
+        .pipe(sass.sync().on('error', sass.logError))
+        .pipe(autoprefixer(SASS_PREFIXER))
+        .pipe(gulp.dest(PATH.sass.out))
+})
 
-gulp.task('styles', ['less', 'css_libs']);
+
+gulp.task('styles', ['sass', 'css_libs']);
 
 // handle fonts
 gulp.task('fonts', function(){
@@ -190,10 +212,10 @@ gulp.task('js_libs', function() {
     return gulp.src([
             PATH.js_libs.in + 'jquery.js',
             PATH.js_libs.in + 'popper.js',
-            PATH.js_libs.in + 'bootstrap.js'
+            PATH.js_libs.in + 'bootstrap.js',
+            PATH.js_libs.in + 'bootstrap-select.js'
         ])
         .pipe(concat('libs.js'))
-        .pipe(uglify())
         .pipe(changed(PATH.js_libs.out))
         .pipe(gulp.dest(PATH.js_libs.out))
     ;
@@ -234,6 +256,7 @@ gulp.task('build',
         'fonts',
         'pictures',
         'js_libs',
+        'js',
         'html'
     ],
 
@@ -261,7 +284,7 @@ gulp.task('browsersync', function() {
 
 gulp.task('watcher', function() {
     gulp.watch(PATH.images.in, ['images']);
-    gulp.watch(PATH.less.in, ['less']);
+    gulp.watch(PATH.sass.in, ['sass', browsersync.reload]);
     gulp.watch(PATH.js_libs.in, ['js_libs'])
     gulp.watch([PATH.njk.njk, PATH.njk.in], ['html', browsersync.reload]);
 })

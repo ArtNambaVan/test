@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,57 +11,72 @@
 
     
     <title>Home</title>
-    <link rel="stylesheet" href="css/libs/libs.css" />
-     
+    <link rel="stylesheet" href="css/libs/clay.css"> 
+    
 
+    <link rel="stylesheet" href="css/libs/main.css">
+    <link rel="stylesheet" href="css/libs/bootstrap-select.css">
+     
+    
     <link rel="stylesheet" href="css/style.css">
     <script src="js/libs.js"></script>
+    <script src="js/main.js"></script>
 
 
 </head>
 
 <body>
 
-    <header class="header">
+    <div class="content-wrapper">
+
+        <header class="header">
     <div class="container">
-        
         <nav class="main-nav navbar-expand-md navbar-light">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-            <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse main-nav__navigation" id="navbarSupportedContent">
                 <div class="main-nav__section main-nav__section--left">
                     <div class="main-logo">
                         <a class=""></a>
-                        <img class="main-logo__img" src="https://www.consline.com/wp-content/uploads/2015/02/CIMS-e1423783658928.png" alt="CIMS logo">
+                        <img class="main-logo__img" src="images/logo.jpg" alt="CIMS logo">
                     </div>
                     <ul class="main-nav__list">
-                        
-                            <li class="main-nav__item">
-                                <a class="main-nav__item-link active" href="#">Home</a>
-                            </li>
-                        
-                            <li class="main-nav__item">
-                                <a class="main-nav__item-link " href="#">Messages</a>
-                            </li>
-                        
-                            <li class="main-nav__item">
-                                <a class="main-nav__item-link " href="#">Analysis</a>
-                            </li>
-                        
-                            <li class="main-nav__item">
-                                <a class="main-nav__item-link " href="#">Reports</a>
-                            </li>
-                        
-                            <li class="main-nav__item">
-                                <a class="main-nav__item-link " href="#">Newsletter</a>
-                            </li>
-                        
+                    
+                        <li class="main-nav__item">
+                            <a class="main-nav__item-link " href="#">Home</a>
+                        </li>
+                    
+                        <li class="main-nav__item">
+                            <a class="main-nav__item-link " href="#">Messages</a>
+                        </li>
+                    
+                        <li class="main-nav__item">
+                            <a class="main-nav__item-link active" href="#">Analysis</a>
+                        </li>
+                    
+                        <li class="main-nav__item">
+                            <a class="main-nav__item-link " href="#">Reports</a>
+                        </li>
+                    
+                        <li class="main-nav__item">
+                            <a class="main-nav__item-link " href="#">Newsletter</a>
+                        </li>
+                    
                     </ul>
+
                 </div>
 
                 <div class="main-nav__section main-nav__section--right">
-                    
+                    <li class="main-nav__item">
+                        <a class="main-nav__item-link" href="#">New Message</a>
+                    </li>
+                    <li class="main-nav__item">
+                        <a class="main-nav__item-link" href="#">Administrator</a>
+                    </li>
+                    <li class="main-nav__item">
+                        <a class="main-nav__item-link" href="#">Sign Out</a>
+                    </li>
                 </div>
             </div>
 
@@ -144,23 +160,85 @@
     </div>
 </header>
 
-
-    <div class="content-wrapper">
         <div class="container">
 
-            
+            <div class="portlet-body">
+    <div class="messages-panel">
 
-    <h1 class="heading">CONNECTED</h1>
+    </div>
 
-
+    <div class="messages-list">
+        <div class="pagination-bar">
+            <div class="dropdown pagination-items-per-page">
+                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#1" role="button">
+                    10 entries
+                    <svg aria-hidden="true" class="lexicon-icon lexicon-icon-caret-double-l">
+                        <use href="/images/icons/icons.svg#caret-double-l" />
+                    </svg>
+                </a>
+                <div class="dropdown-menu dropdown-menu-top">
+                    <a class="dropdown-item" href="#1">5</a>
+                    <a class="dropdown-item" href="#1">10</a>
+                    <a class="dropdown-item" href="#1">20</a>
+                    <a class="dropdown-item" href="#1">30</a>
+                    <a class="dropdown-item" href="#1">50</a>
+                </div>
+            </div>
+            <div class="pagination-results">Showing 1 to 20 of 203 entries.</div>
+            <ul class="pagination">
+                <li class="disabled page-item">
+                    <a class="page-link" href="#1" role="button">
+                        <svg aria-hidden="true" class="lexicon-icon lexicon-icon-angle-left">
+                            <use href="/images/icons/icons.svg#angle-left" />
+                        </svg>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                <li class="active page-item"><a class="page-link" href="#1">1</a></li>
+                <li class="page-item"><a class="page-link" href="#1">2</a></li>
+                <li class="dropdown page-item">
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle page-link" data-toggle="dropdown" href="#1" role="button">...</a>
+                    <div class="dropdown-menu dropdown-menu-top-center">
+                        <div class="inline-scroller">
+                            <a class="dropdown-item" href="#1">3</a>
+                            <a class="dropdown-item" href="#1">4</a>
+                            <a class="dropdown-item" href="#1">5</a>
+                            <a class="dropdown-item" href="#1">6</a>
+                            <a class="dropdown-item" href="#1">7</a>
+                            <a class="dropdown-item" href="#1">8</a>
+                            <a class="dropdown-item" href="#1">9</a>
+                            <a class="dropdown-item" href="#1">10</a>
+                            <a class="dropdown-item" href="#1">11</a>
+                            <a class="dropdown-item" href="#1">12</a>
+                            <a class="dropdown-item" href="#1">13</a>
+                            <a class="dropdown-item" href="#1">14</a>
+                            <a class="dropdown-item" href="#1">15</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="page-item"><a class="page-link" href="#1">16</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#1" role="button">
+                        <svg aria-hidden="true" class="lexicon-icon lexicon-icon-angle-right">
+                            <use href="/images/icons/icons.svg#angle-right" />
+                        </svg>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 
         </div>
+
+        <footer>
+    <p>FOOTER</p>
+</footer>
     </div>
 
 
-    <footer>
-    <p>FOOTER</p>
-</footer>
+    
 
 
     <!-- SCRIPTS -->

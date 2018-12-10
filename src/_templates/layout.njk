@@ -1,6 +1,7 @@
 {% if not(title) %}
     {% set title = "Default title" %}
 {% endif %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,30 +13,37 @@
 
     {# {% block title %} {% endblock title %} #}
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="css/libs/libs.css" />
-    {% block styles %} {% endblock styles %}
+    <link rel="stylesheet" href="css/libs/clay.css"> 
+    {#<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/clay/lib/css/atlas.css"> #}
 
+    <link rel="stylesheet" href="css/libs/main.css">
+    <link rel="stylesheet" href="css/libs/bootstrap-select.css">
+    {% block styles %} {% endblock styles %}
+    
     <link rel="stylesheet" href="css/style.css">
     <script src="js/libs.js"></script>
+    <script src="js/main.js"></script>
 
 
 </head>
 
 <body>
 
-    {% include "partials/header.njk" %}
-
-
     <div class="content-wrapper">
+
+        {% include "partials/header.njk" %}
+
         <div class="container">
 
-            {% block content %} {% endblock content %}
+            {% include "partials/messages.njk" %}
 
         </div>
+
+        {% include "partials/footer.njk" %}
     </div>
 
 
-    {% include "partials/footer.njk" %}
+    
 
 
     <!-- SCRIPTS -->
