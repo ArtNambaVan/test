@@ -48,11 +48,11 @@
                         </li>
                     
                         <li class="main-nav__item">
-                            <a class="main-nav__item-link " href="#">Messages</a>
+                            <a class="main-nav__item-link active" href="#">Messages</a>
                         </li>
                     
                         <li class="main-nav__item">
-                            <a class="main-nav__item-link active" href="#">Analysis</a>
+                            <a class="main-nav__item-link " href="#">Analysis</a>
                         </li>
                     
                         <li class="main-nav__item">
@@ -160,11 +160,49 @@
     </div>
 </header>
 
-        <div class="container">
+        <main>
+            <div class="container">
 
-            <div class="portlet-body">
+                <div class="portlet-body">
     <div class="messages-panel">
+        <form>
+            <div class="form-group row">
+                <div class="col-7">
+                    <input class="search" type="search">
+                </div>
+                <div class="col-5">
+                    <button class="btn btn--primary">Extended search</button>
+                </div>
+            </div>
+        </form>
 
+        <div class="panel">
+            <div class="tag-cloud">
+
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-header">
+                <a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed">
+                    <p class="panel-header__title">Select Category</p>
+                    <span class="collapse-icon"><i class="fa fa-chevron-down"></i></span>
+                </a>
+            </div>
+            <div class="panel-body collaps">
+                <div class="category">
+                    <div class="form-group row">
+                        <button class="btn btn--secondary">Add Category</button>
+                        <div class="tooltip" data-direction="bottom">
+                            <div class="tooltip__initiator">
+                                <i class="fa fa-camera-retro fa-lg"></i>
+                            </div>
+                            <div class="tooltip__item">Hello! I'm a pure css tooltip</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="messages-list">
@@ -230,7 +268,8 @@
     </div>
 </div>
 
-        </div>
+            </div>
+        </main>
 
         <footer>
     <p>FOOTER</p>

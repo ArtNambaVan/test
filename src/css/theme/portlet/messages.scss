@@ -1,0 +1,18 @@
+.messages-panel {
+    width: 600px;
+    background-color: $primaryColor;
+
+    .panel {
+        background-color: transparent;
+
+        a {
+            color: white;
+        }
+    }
+}
+
+.form-group {
+    @include padding(10px, 15px, 10px, 35px);
+
+    margin-bottom: 0;
+}
