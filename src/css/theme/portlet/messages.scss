@@ -1,6 +1,14 @@
 .messages-panel {
     width: 600px;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    bottom: 0;
     background-color: $primaryColor;
+
+    &--open + .messages-list {
+        padding-left: 570px;
+    }
 
     .panel {
         background-color: transparent;

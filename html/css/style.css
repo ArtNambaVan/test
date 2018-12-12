@@ -2402,7 +2402,8 @@ a {
     border-color: #012b5b; }
 
 .header {
-  margin-top: 0; }
+  margin-top: 0;
+  height: 110px; }
 
 .main-nav__navigation {
   -webkit-box-align: end;
@@ -2520,49 +2521,15 @@ a {
   font-size: 38px;
   color: #21606b; }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-     -moz-box-orient: vertical;
-     -moz-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  font-family: sans-serif;
-  background: #dadada;
-  font-family: 'Roboto', sans-serif; }
-
-main {
-  -webkit-box-flex: 1;
-     -moz-box-flex: 1;
-      -ms-flex: 1 1 100vh;
-          flex: 1 1 100vh;
-  min-height: 100vh;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-     -moz-box-orient: horizontal;
-     -moz-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-     -moz-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around; }
-
 .messages-panel {
   width: 600px;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  bottom: 0;
   background-color: #012b5b; }
+  .messages-panel--open + .messages-list {
+    padding-left: 570px; }
   .messages-panel .panel {
     background-color: transparent; }
     .messages-panel .panel a {
