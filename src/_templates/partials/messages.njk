@@ -2,63 +2,90 @@
     <div class="messages-panel messages-panel--open">
         <div>
             <form>
-                <div class="form-group row">
-                    <div class="col-7">
-                        <input class="search" type="search">
+                <div class="messages-panel__group row">
+                    <div class="col-6">
+                        <input class="form-control search" type="search">
                     </div>
-                    <div class="col-5">
-                        <button class="btn btn--primary">Extended search</button>
+
+                </div>
+            
+                <div class="panel">
+                    <div class="messages-panel__group">
+                        <a aria-controls="categoryBody" aria-expanded="true" class="collapse-icon sheet-subtitle panel__title" data-toggle="collapse" href="#categoryBody" id="categoryHeading" role="tab">
+                            <span>Select Category</span>
+                            <span class="collapse-icon-closed">
+                                <i class="fa fa-chevron-down"></i>
+                            </span>
+                            <span class="collapse-icon-open">
+                                <i class="fa fa-chevron-up"></i>
+                            </span>
+                        </a>
                     </div>
+                    <div aria-labelledby="categoryHeading" class="panel-collapse collapse show" id="categoryBody" role="tabpanel">
+                        {# <dsiv class="panel-body"> #}
+                            <div class="category">
+                                <div class="messages-panel__group row">
+                                    <div class="col">
+                                        <input class="form-control search" type="search">
+                                    </div>
+                                </div>
+
+                                <div class="messages-panel__group subcategory row">
+                                    <div class="col-4">
+                                        <span>China</span>
+                                    </div>
+                                    <div class="col-4">
+                                        
+                                    </div>
+                                    <div class="col-4">
+                                        Add And X
+                                    </div>
+                                </div>
+
+                                <div class="messages-panel__group subcategory row">
+                                    <div class="col-4">
+                                        <span>2018</span>
+                                    </div>
+                                    <div class="col-4">
+                                        
+                                    </div>
+                                    <div class="col-4">
+                                        Add And X
+                                    </div>
+                                </div>
+
+                                <div class="messages-panel__group subcategory row">
+                                    <div class="col-4">
+                                        <span>2019</span>
+                                    </div>
+                                    <div class="col-4">
+                                        
+                                    </div>
+                                    <div class="col-4">
+                                        Add And X
+                                    </div>
+                                </div>
+                            </div>
+                        {# </dsiv> #}
+                    </div>
+                </div>
+
+                <div class="messages-panel__group row">
+                    <div class="col-3">Sourse</div>
+                    <div class="col-6">Select</div>
+                </div>
+                <div class="messages-panel__group row">
+                    <div class="col-3">Sourse</div>
+                    <div class="col-6">Select</div>
+                </div>
+                <div class="messages-panel__group row">
+                    <div class="col-3">Sourse</div>
+                    <div class="col-6">Select</div>
                 </div>
             </form>
-
-            <div class="panel">
-                <div class="tag-cloud">
-                <div class="panel-header">
-                    <a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed">
-                        <p class="panel-header__title">Hide latest terms</p>
-                        <span class="collapse-icon"><i class="fa fa-chevron-down"></i></span>
-                    </a>
-                </div>
-                <div class="panel-body collaps">
-                    <div class="category">
-                        <div class="form-group row">
-                            <button class="btn btn--secondary">Add Category</button>
-                            <div class="tooltip" data-direction="bottom">
-                                <div class="tooltip__initiator">
-                                    <i class="fa fa-camera-retro fa-lg"></i>
-                                </div>
-                                <div class="tooltip__item">Hello! I'm a pure css tooltip</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-
-            <div class="panel">
-                <div class="panel-header">
-                    <a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="panel-header__link trigger collapsed">
-                        <p class="panel-header__title">Select Category</p>
-                        <span class="collapse-icon"><i class="fa fa-chevron-down"></i></span>
-                    </a>
-                </div>
-                <div class="panel-body collaps">
-                    <div class="category">
-                        <div class="form-group row">
-                            <button class="btn btn--secondary">Add Category</button>
-                            <div class="tooltip" data-direction="bottom">
-                                <div class="tooltip__initiator">
-                                    <i class="fa fa-camera-retro fa-lg"></i>
-                                </div>
-                                <div class="tooltip__item">Hello! I'm a pure css tooltip</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
+
 
     <div class="messages-list">
         <div class="pagination-bar">

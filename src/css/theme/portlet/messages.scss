@@ -1,26 +1,64 @@
 .messages-panel {
     width: 600px;
     position: fixed;
-    top: 100px;
+    top: 110px;
     left: 0;
     bottom: 0;
-    background-color: $primaryColor;
+    background-color: $secondaryColor;
+    background-color: #eff3f6;
+    box-shadow: 10px 0 10px -3px #33333342;
+
+    &__group {
+        @include padding(10px, 30px, 10px, 30px);
+    }
 
     &--open + .messages-list {
         padding-left: 570px;
     }
-
-    .panel {
-        background-color: transparent;
-
-        a {
-            color: white;
-        }
-    }
 }
 
-.form-group {
-    @include padding(10px, 15px, 10px, 35px);
+.panel {
+    background-color: transparent;
 
+    // &__title {
+    //     color: $primaryColor;
+    //     border-bottom: 1px solid $primaryColor;
+    //     display: block;
+    //     font-size: 1rem;
+    //     padding-bottom: 0.35rem;
+    //     padding-top: 0.35rem;
+    //     position: relative;
+    //     word-wrap: break-word;
+    // }
+}
+
+.sheet-subtitle {
+    color: $primaryColor;
+    border-bottom: 1px solid $primaryColor;
+    display: block;
+    font-size: 1rem;
+    padding-bottom: 0.35rem;
+    padding-top: 0.35rem;
+    text-transform: none;
     margin-bottom: 0;
+}
+
+.category {
+    margin-right: 20px;
+    background-color: $colorWhite;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 300px;
+}
+
+.subcategory {
+    span {
+        color: #747474;
+        &::before {
+            content: "\f105";
+            font-family: FontAwesome;
+            margin-right: 5px;
+            color: $primaryColor;
+        }
+    }
 }
