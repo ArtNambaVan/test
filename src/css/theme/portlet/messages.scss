@@ -1,18 +1,27 @@
-.messages-panel {
+.messages-panel,
+.settings-panel {
     width: 600px;
     position: fixed;
     top: 110px;
     left: 0;
     bottom: 0;
+    z-index: 2;
     background-color: $secondaryColor;
     background-color: #eff3f6;
     box-shadow: 10px 0 10px -3px #33333342;
+
+    transform: translateX(-600px);
+    transition: transform 0.4s;
 
     &__group {
         @include padding(10px, 30px, 10px, 30px);
     }
 
-    &--open + .messages-list {
+    &--open {
+        transform: translateX(0);
+    }
+
+    &--open + .messages-container {
         padding-left: 570px;
     }
 }
@@ -30,6 +39,11 @@
     //     position: relative;
     //     word-wrap: break-word;
     // }
+}
+
+.messages-container {
+    padding-left: 70px;
+    transition: all 0.4s;
 }
 
 .sheet-subtitle {
@@ -61,4 +75,36 @@
             color: $primaryColor;
         }
     }
+}
+
+.settings-btn {
+    position: fixed;
+    z-index: 1;
+    top: 110px;
+    width: 70px;
+    bottom: 0;
+    left: 0;
+}
+
+.messages-list {
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.panel-close {
+    position: absolute;
+    right: 0;
+    top: 50%;
+
+    width: 20px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.messages-heading {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
 }

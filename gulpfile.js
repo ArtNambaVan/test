@@ -285,7 +285,8 @@ gulp.task('browsersync', function() {
 gulp.task('watcher', function() {
     gulp.watch(PATH.images.in, ['images']);
     gulp.watch(PATH.sass.in, ['sass', browsersync.reload]);
-    gulp.watch(PATH.js_libs.in, ['js_libs'])
+    gulp.watch(PATH.js_libs.in, ['js_libs']);
+    gulp.watch(PATH.js.in, ['js']);
     gulp.watch([PATH.njk.njk, PATH.njk.in], ['html', browsersync.reload]);
 })
 

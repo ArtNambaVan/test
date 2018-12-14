@@ -5,3 +5,38 @@
         border-color: $primaryColor;
     }
 }
+
+.search + i {
+    position: absolute;
+    right: 24px;
+    top: 10px;
+}
+
+.input-icon {
+
+    i {
+        cursor: default;
+        position: absolute;
+        line-height: 1;
+        text-align: center;
+        top: 0px;
+        right: 0;
+        margin: 0;
+        height: 100%;
+        width: 2.67142857em;
+        opacity: .5;
+        border-radius: 0 .28571429rem .28571429rem 0;
+        -webkit-transition: opacity .3s ease;
+        transition: opacity .3s ease;
+        text-align: center;
+    }
+}
+
+.left-icon {
+
+    i {
+        position: absolute;
+        top: 10px;
+    }
+}
+
