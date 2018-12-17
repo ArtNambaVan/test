@@ -6,8 +6,24 @@
     box-sizing: inherit;
 }
 
-* + * {
+.cims * + * {
     //margin-top: 1rem;
+}
+
+.cims {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+main {
+    flex: 1 1 0;
+}
+
+div[class^="col-"] {
+    margin-top: 0;
 }
 
 html {

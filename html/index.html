@@ -27,7 +27,7 @@
 
 <body>
 
-    <div class="content-wrapper">
+    <div class="cims" id="wrapper">
 
         <header class="header">
     <div class="container">
@@ -87,25 +87,26 @@
             <div class="container">
 
                 <div class="portlet-body">
-    <div class="settings-btn" id="settingsBtn">
-        <span>show filters</span>
-        <span><i class="fa fa-angle-right"></i></span>
-    </div>
-    <div class="settings-panel messages-panel settings-panel--open" id="settingsPanel">
-        <div>
+    
+    <div class="filters-panel filters-panel--open" id="filtersPanel">
+        <div class="filters-panel__btn" id="filtersBtn">
+            <span>show filters:</span>
+        </div>
+        <div class="filters-panel__body">
             <form>
-                <div class="messages-panel__group row">
-                    <div class="col-6">
-                        <div class="input-icon input-icon--left">
-                            <input class="form-control search" type="search" placeholder="Text search" aria-label="Text search">
-                            <i aria-hidden="true" class="fa fa-search dropdown-input-search"></i>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-7">
+                            <div class="input-icon input-icon--left">
+                                <input class="form-control search" type="search" placeholder="Text search" aria-label="Text search">
+                                <i aria-hidden="true" class="fa fa-search dropdown-input-search"></i>
+                            </div>
                         </div>
                     </div>
-
                 </div>
             
                 <div class="panel">
-                    <div class="messages-panel__group">
+
                         <a aria-controls="categoryBody" aria-expanded="true" class="collapse-icon sheet-subtitle panel__title" data-toggle="collapse" href="#categoryBody" id="categoryHeading" role="tab">
                             <span>Select Category</span>
                             <span class="collapse-icon-closed">
@@ -115,80 +116,148 @@
                                 <i class="fa fa-chevron-up"></i>
                             </span>
                         </a>
-                    </div>
-                    <div aria-labelledby="categoryHeading" class="panel-collapse collapse show" id="categoryBody" role="tabpanel">
-                        
-                            <div class="category">
-                                <div class="messages-panel__group row">
-                                    <div class="col">
-                                        <input class="form-control search" type="search">
-                                    </div>
-                                </div>
 
-                                <div class="messages-panel__group subcategory row">
-                                    <div class="col-4">
-                                        <span>China</span>
-                                    </div>
-                                    <div class="col-4">
-                                        
-                                    </div>
-                                    <div class="col-4">
-                                        Add And X
-                                    </div>
-                                </div>
-
-                                <div class="messages-panel__group subcategory row">
-                                    <div class="col-4">
-                                        <span>2018</span>
-                                    </div>
-                                    <div class="col-4">
-                                        
-                                    </div>
-                                    <div class="col-4">
-                                        Add And X
-                                    </div>
-                                </div>
-
-                                <div class="messages-panel__group subcategory row">
-                                    <div class="col-4">
-                                        <span>2019</span>
-                                    </div>
-                                    <div class="col-4">
-                                        
-                                    </div>
-                                    <div class="col-4">
-                                        Add And X
+                    <div aria-labelledby="categoryHeading" class="panel-collapse category-wrapper collapse show" id="categoryBody" role="tabpanel">
+                        <div class="category">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="input-icon input-icon--left">
+                                            <input class="form-control search" type="search" placeholder="Text search" aria-label="Text search">
+                                            <i aria-hidden="true" class="fa fa-search dropdown-input-search"></i>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        
+
+                            <div class="category__list">
+                                <div class="category__item row">
+                                    <div class="col-4">
+                                        <div class="category__name">China</div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="category__classification"></div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="category__value">
+                                            <span>Add</span>
+                                            <select class="">
+                                                <option>AND</option>
+                                                <option>OR</option>
+                                            </select>
+                                            <a href="#" class="delete-category"><i class="fa fa-times"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class=" category__item row">
+                                    <div class="col-4">
+                                        <div class="category__name">2018</div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="category__classification"></div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="category__value">
+                                            <span>Add</span>
+                                            <select class="">
+                                                <option>AND</option>
+                                                <option>OR</option>
+                                            </select>
+                                            <a href="#" class="delete-category"><i class="fa fa-times"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="category__item row">
+                                    <div class="col-4">
+                                        <div class="category__name">2019</div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="category__classification"></div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="category__value">
+                                            <span>Add</span>
+                                            <select class="">
+                                                <option>AND</option>
+                                                <option>OR</option>
+                                            </select>
+                                            <a href="#" class="delete-category"><i class="fa fa-times"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="category__list">
+                                <div class="category__item row">
+                                    <div class="col-4">
+                                        <div class="category__name">China</div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="category__classification">                                         
+                                            <input type="radio" name="classyfication-input" id="classification-input-negative" value="-1" aria-label="-1">
+                                            <label for="classification-input-negative" class="classification-label-negative"></label>
+                                        </div>
+                                        <div class="category__classification">  
+                                            <input type="radio" name="classyfication-input" id="classification-input-neutral" value="0" aria-label="0">
+                                            <label for="classification-input-neutral" class="classification-label-neutral"></label>
+                                        </div> 
+                                        <div class="category__classification">  
+                                            <input type="radio" name="classyfication-input" id="classification-input-positive" value="1" aria-label="1">
+                                            <label for="classification-input-positive" class="classification-label-positive"></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="category__value">
+                                            <span>Add</span>
+                                            <select class="">
+                                                <option>AND</option>
+                                                <option>OR</option>
+                                            </select>
+                                            <a href="#" class="delete-category"><i class="fa fa-times"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="messages-panel__group row">
+                <div class="form-group row">
                     <label for="messageSource" class="col-3 col-form-label">Source:</label>
                     <div class="col-6">
-                        <input type="select" class="form-control" id="messageSource" placeholder="Password">
-
+                        <select class="selectpicker form-control">
+                            <option>Type or select source</option>
+                            <option>Type or select source2</option>
+                        </select>
                     </div>
                 </div>
-                <div class="messages-panel__group row">
+                <div class="form-group row">
                     <label for="messageViews" class="col-3 col-form-label">Views:</label>
                     <div class="col-6">
-                        <input type="text" class="form-control" id="messageViews" placeholder="Password">
+                        <input type="text" class="form-control" id="messageViews">
                     </div>
                 </div>
-                <div class="messages-panel__group row">
+                <div class="form-group row">
                     <label for="messageDate" class="col-3 col-form-label">Date:</label>
                     <div class="col-6">
-                        <input type="password" class="form-control" id="messageDate" placeholder="Password">
+                        <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#1" role="button">
+                        10 entries
+                            <svg aria-hidden="true" class="lexicon-icon lexicon-icon-caret-double-l">
+                                <use href="/images/icons/icons.svg#caret-double-l" />
+                            </svg>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-bottom">
+                            <a class="dropdown-item" href="#1">10</a>
+                            <a class="dropdown-item" href="#1">20</a>
+                            <a class="dropdown-item" href="#1">30</a>
+                            <a class="dropdown-item" href="#1">50</a>
+                            <a class="dropdown-item" href="#1">100</a>
+                        </div>
                     </div>
                 </div>
             </form>
-
-            <div class="panel-close" id="panelClose">
-                <span><i class="fa fa-angle-left"></i></span>
-            </div>
         </div>
     </div>
 
