@@ -1,8 +1,10 @@
-.form-control {
-
-    &:focus {
-        box-shadow: none;
-        border-color: $primaryColor;
+.cims {
+    .form-control {
+        min-height: auto;
+        &:focus {
+            box-shadow: none;
+            border-color: $primaryColor;
+        }
     }
 }
 
@@ -41,6 +43,10 @@
     margin-bottom: 0;
 
     & + & {
-        margin-top: 1.4rem;
+        margin-top: 1rem;
     }
+}
+
+.custom-control .custom-control-input:focus ~ .custom-control-label::before {
+    box-shadow: none;
 }

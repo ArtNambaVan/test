@@ -12,8 +12,4 @@ $( document ).ready(function() {
         console.log(settingsPanel)
         settingsPanel.hasClass(openPanel) ? settingsPanel.removeClass(openPanel) : settingsPanel.addClass(openPanel);
     });
-    closePanel.on('click', function() {
-        settingsBtn.click();
-        console.log('asasas')
-    })
 });

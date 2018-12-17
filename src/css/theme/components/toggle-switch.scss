@@ -1,0 +1,29 @@
+.toggle-switch {
+
+}
+
+.toggle-switch-check:empty~.toggle-switch-bar {
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-size: .75rem;
+    height: 29px;
+    line-height: 32px;
+    position: relative;
+    text-indent: 0;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.toggle-switch-check:empty~.toggle-switch-bar:before {
+    background-color: transparent;
+    border-radius: 20px;
+    border: 1px solid $primaryColor;
+}
+
+
+.toggle-switch-check:checked ~ .toggle-switch-bar:after, label:not(.toggle-switch) .toggle-switch:checked ~ .toggle-switch-bar::before {
+    background: red;
+}
