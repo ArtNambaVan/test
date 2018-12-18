@@ -1,7 +1,10 @@
 .header {
     margin-top: 0;
-    height: 110px;
-    border-bottom: 1px solid black;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $borderColor;
+    background-color: $colorWhite;
+    z-index: 20;
 }
 
 .main-nav {

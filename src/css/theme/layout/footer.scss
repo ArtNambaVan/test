@@ -1,3 +1,10 @@
-footer p {
-    text-align: center;
+.footer {
+    border-top: 1px solid $borderColor;
+
+    &__copyright {
+        text-align: right;
+        padding-top: 0.5rem;
+        padding-bottom: 1rem;
+        margin-bottom: 0;
+    }
 }

@@ -61,7 +61,7 @@ PATH.less = {
 };
 
 PATH.sass = {
-    all : PATH.src + 'css/style.scss',
+    all : PATH.src + 'css/*.scss',
     in  : PATH.src + 'css/**/*.scss',
     out : PATH.dest + 'css/'
 }
@@ -106,10 +106,12 @@ var SASS_PREFIXER = {
 
 // NUNJUCKS options
 var NUNJUCKS_DEFAULTS = {
-    path: 'src/_templates/'
-    // envOptions: {
-    //     watch: false
-    // }
+    path: 'src/_templates/',
+    envOptions: {
+        watch: false,
+        trimBlocks: true,
+        lstripBlocks: true
+    }
 };
 
 // handle styles

@@ -1,4 +1,5 @@
 .pagination {
+    margin-bottom: 0;
 
     & > li {
         margin-left: 4px;
@@ -13,10 +14,26 @@
             color: $primaryColor;
             border: none;
         }
+
+        &.active > a:hover,
+        &.active > a:focus {
+            border: none;
+            background-color: $thirdlyColor;
+        }
     }
+}
+
+.pagination-results {
+    margin-bottom: 0;
+    margin-right: 0;
 }
 
 .page-item.active .page-link {
     background-color: $thirdlyColor;
+    border: none;
+}
+
+.page-item:last-child .page-link {
+    background-color: transparent;
     border: none;
 }

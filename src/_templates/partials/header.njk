@@ -1,37 +1,37 @@
-<header class="header">
-    <div class="container-fluid">
-        <nav class="main-nav navbar-expand-md navbar-light">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse main-nav__navigation" id="navbarSupportedContent">
-                <div class="main-nav__section main-nav__section--left">
-                    <div class="main-logo">
-                        <a class=""></a>
-                        <img class="main-logo__img" src="images/logo.jpg" alt="CIMS logo">
+        <header class="header">
+            <div class="container-fluid">
+                <nav class="main-nav navbar-expand-md navbar-light">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse main-nav__navigation" id="navbarSupportedContent">
+                        <div class="main-nav__section main-nav__section--left">
+                            <div class="main-logo">
+                                <a class=""></a>
+                                <img class="main-logo__img" src="images/logo.jpg" alt="CIMS logo">
+                            </div>
+                            <ul class="main-nav__list">
+                            {% for item in navItems %}
+                                <li class="main-nav__item">
+                                    <a class="main-nav__item-link {% if pageId == item.navActiveItem %}active{% endif %}" href="#">{{ item.title }}</a>
+                                </li>
+                            {% endfor %}
+                            </ul>
+
+                        </div>
+
+                        <div class="main-nav__section main-nav__section--right">
+                            <li class="main-nav__item">
+                                <a class="main-nav__item-link" href="#">New Message</a>
+                            </li>
+                            <li class="main-nav__item">
+                                <a class="main-nav__item-link" href="#">Administrator</a>
+                            </li>
+                            <li class="main-nav__item">
+                                <a class="main-nav__item-link" href="#">Sign Out</a>
+                            </li>
+                        </div>
                     </div>
-                    <ul class="main-nav__list">
-                    {% for item in navItems %}
-                        <li class="main-nav__item">
-                            <a class="main-nav__item-link {% if pageId == item.navActiveItem %}active{% endif %}" href="#">{{ item.title }}</a>
-                        </li>
-                    {% endfor %}
-                    </ul>
-
-                </div>
-
-                <div class="main-nav__section main-nav__section--right">
-                    <li class="main-nav__item">
-                        <a class="main-nav__item-link" href="#">New Message</a>
-                    </li>
-                    <li class="main-nav__item">
-                        <a class="main-nav__item-link" href="#">Administrator</a>
-                    </li>
-                    <li class="main-nav__item">
-                        <a class="main-nav__item-link" href="#">Sign Out</a>
-                    </li>
-                </div>
+                </nav>
             </div>
-        </nav>
-    </div>
-</header>
+        </header>

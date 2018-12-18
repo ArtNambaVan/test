@@ -25,17 +25,3 @@
 #wrapper {
     padding-top: 0;
 }
-
-.container-fluid {
-    
-    @media (min-width: 1200px) {
-        padding-left: 50px;
-        padding-right: 50px;
-    }
-
-    @media (min-width: 1680px) {
-        padding-left: 135px;
-        padding-right: 135px;
-    }
-
-}

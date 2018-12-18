@@ -1,29 +1,36 @@
-.toggle-switch {
-
+.toggle-switch + span {
+    color: $primaryColor;
+    vertical-align: text-bottom;
 }
 
-.toggle-switch-check:empty~.toggle-switch-bar {
-    cursor: pointer;
-    display: block;
-    float: left;
-    font-size: .75rem;
-    height: 29px;
-    line-height: 32px;
-    position: relative;
-    text-indent: 0;
-    -ms-user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-}
+.toggle-switch-check {
+    &:empty ~ .toggle-switch-bar {
+        &::before {
+            border-color: $primaryColor;
+            border-width: 2px;
+            background-color: $colorWhite;
+            border-radius: 20px;
+        }
 
-.toggle-switch-check:empty~.toggle-switch-bar:before {
-    background-color: transparent;
-    border-radius: 20px;
-    border: 1px solid $primaryColor;
-}
+        &::after {
+            border-color: $primaryColor;
+            border-radius: 50%;
+            border-width: 2px;
+        }
+    }
 
+    &:checked ~ .toggle-switch-bar {
+        &::before {
+            border-color: $primaryColor;
+            border-width: 2px;
+            background-color: $primaryColor;
+            border-radius: 20px;
+        }
 
-.toggle-switch-check:checked ~ .toggle-switch-bar:after, label:not(.toggle-switch) .toggle-switch:checked ~ .toggle-switch-bar::before {
-    background: red;
+        &::after {
+            border-color: $primaryColor;
+            border-radius: 50%;
+            border-width: 2px;
+        }
+    }
 }

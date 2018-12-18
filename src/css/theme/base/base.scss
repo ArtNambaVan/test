@@ -6,14 +6,10 @@
     box-sizing: inherit;
 }
 
-.cims * + * {
-    //margin-top: 1rem;
-}
-
 .cims {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
     outline: none;
 
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -31,8 +27,8 @@ div[class^="col-"] {
     margin-top: 0;
 }
 
-html {
-    //font-size: 62.5%; //1rem = 10px, 10px/16px =62.5%
+h2 {
+    font-size: 24px;
 }
 
 body {
@@ -42,8 +38,8 @@ body {
 
 dl,
 ol,
-ul {
-    margin-top: 1rem;
+ul,
+label {
     margin-bottom: 0;
 }
 
@@ -54,5 +50,17 @@ a {
 @media (min-width: 1680px) {
     .container {
         max-width: 1600px;
+    }
+}
+
+.container-fluid {
+    @media (min-width: 1200px) {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    @media (min-width: 1680px) {
+        padding-left: 135px;
+        padding-right: 135px;
     }
 }

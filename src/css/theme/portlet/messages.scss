@@ -1,14 +1,13 @@
 .filters-panel {
-    width: 600px;
     position: fixed;
-    top: 110px;
+    top: 0;
     left: 0;
     bottom: 0;
     z-index: 2;
+    width: 600px;
     background-color: $secondaryColor;
     background-color: #eff3f6;
     box-shadow: 1px 0 20px #33333342;
-
     transform: translateX(-600px);
     transition: transform 0.4s;
 
@@ -17,11 +16,10 @@
         top: 0;
         left: 600px;
         bottom: 0;
-        width: 70px;
-        //background-color: red;
         z-index: 100;
-        cursor: pointer;
+        width: 70px;
         background-color: $primaryColor;
+        cursor: pointer;
         transition: background-color 200ms linear;
 
         &:hover {
@@ -29,26 +27,26 @@
         }
 
         span {
-            font-size: 14px;
-            width: 40px;
-            display: inline-block;
             position: absolute;
             top: 50%;
-            transform: translateY(-50%);
             left: 10px;
+            display: inline-block;
+            width: 40px;
+            font-size: 14px;
+            transform: translateY(-50%);
             color: $colorWhite;
 
             &::after {
                 content: '\f105';
-                font-family: FontAwesome;
-                display: inline-block;
                 position: absolute;
                 right: -18px;
                 top: 50%;
-                transform: translateY(-50%);
+                display: inline-block;
+                font-family: FontAwesome;
                 font-size: 2rem;
                 font-weight: bold;
                 color: $thirdlyColor;
+                transform: translateY(-50%);
             }
         }
     }
@@ -58,10 +56,13 @@
         padding-right: 30px;
         padding-bottom: 20px;
         padding-left: 30px;
+        margin-top: 121px;
     }
 
     &--open {
         transform: translateX(0);
+        overflow-x: hidden;
+        overflow-y: auto;
 
         .filters-panel__btn {
             position: absolute;
@@ -87,8 +88,14 @@
         }
     }
 
-    &--open + .messages-container {
-        padding-left: 570px;
+    &--open + .messages {
+        @media (min-width: 1200px) {
+            padding-left: 590px;
+        }
+
+        @media (min-width: 1680px) {
+            padding-left: 500px;
+        }
     }
 }
 
@@ -98,33 +105,30 @@
 
 .panel {
     background-color: transparent;
-
-    // &__title {
-    //     color: $primaryColor;
-    //     border-bottom: 1px solid $primaryColor;
-    //     display: block;
-    //     font-size: 1rem;
-    //     padding-bottom: 0.35rem;
-    //     padding-top: 0.35rem;
-    //     position: relative;
-    //     word-wrap: break-word;
-    // }
 }
 
-.messages-container {
-    padding-left: 70px;
+.messages {
+    padding-left: 90px;
     transition: all 0.4s;
+
+    @media (min-width: 1200px) {
+        padding-left: 60px;
+    }
+
+    @media (min-width: 1680px) {
+        padding-left: 0;
+    }
 }
 
 .sheet-subtitle {
-    color: $primaryColor;
     display: block;
-    font-size: 14px;
     padding-bottom: 0.35rem;
     padding-top: 0.35rem;
+    margin-bottom: 0;
+    font-size: 14px;
+    color: $primaryColor;
     text-transform: none;
     border: none;
-    margin-bottom: 0;
 
     &.collapsed {
         border-bottom: 1px solid $primaryColor;
@@ -140,12 +144,11 @@
         padding-bottom: 20px;
 
         & + & {
-            border-top: 1px solid gray;
+            border-top: 1px solid $borderColor;
         }
     }
 
     &__item {
-
         & + & {
             margin-top: 0.8rem;
         }
@@ -168,11 +171,12 @@
         margin-right: 7px;
 
         label {
+            display: inline-block;
             height: 15px;
             width: 13px;
-            border-radius: 50%;
-            display: inline-block;
             margin: 0;
+            border-radius: 50%;
+            vertical-align: middle;
         }
 
         &--positive {
@@ -229,7 +233,6 @@
     }
 
     &__value {
-        
         .subtitle {
             position: absolute;
             top: 8px;
@@ -250,6 +253,7 @@
 .subtitle {
     font-size: 14px;
     color: #707070;
+    vertical-align: middle;
 }
 
 .messages-list {
@@ -263,27 +267,43 @@
     position: absolute;
     right: 0;
     top: 50%;
-
     width: 20px;
     text-align: center;
     font-size: 2rem;
 }
 
+.messages-settings {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 1rem;
+
+    &__pagination {
+        margin-right: auto;
+    }
+
+    &__translation {
+        align-self: flex-end;
+        margin-right: 3rem;
+    }
+}
+
+.messages-container {
+    margin-top: 4rem;
+}
+
 .messages-heading {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid $borderColor;
 }
 
-.filters-btn {
-    position: fixed
-}
-
-.form-group + .panel, .panel + .form-group {
+.form-group + .panel,
+.panel + .form-group {
     margin-top: 1.6rem;
 }
 
-.dropdown-toggle::after {
+.bootstrap-select .dropdown-toggle::before {
     content: "\f107";
     font-family: FontAwesome;
     font-weight: bold;
@@ -298,4 +318,61 @@
 
 .delete-category {
     display: inline-block;
+}
+
+.message-item {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    &__heading {
+        font-size: 19px;
+        color: $primaryColor;
+        text-transform: uppercase;
+        margin-right: 5rem;
+    }
+
+    &__text {
+        margin-top: 0.8rem;
+        font-size: 18px;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__translation {
+        border-top: 1px solid $borderColor;
+        padding-top: 0.8rem;
+        position: relative;
+
+        .label-success {
+            position: absolute;
+            top: 0.8rem;
+            right: 0;
+        }
+    }
+
+    & + & {
+        border-top: 1px solid $borderColor;
+    }
+}
+
+.access {
+    list-style-type: none;
+    margin-top: auto;
+
+    &__item {
+        color: gray;
+    }
+
+    i {
+        margin-right: 10px;
+    }
+}
+
+.label-success {
+    background-color: rgba($sucessColor,0.3);
+    border-color: rgba($sucessColor,0.3);
+    color: $sucessColor;
 }
