@@ -1,6 +1,7 @@
 .cims {
     .form-control {
         min-height: auto;
+
         &:focus {
             box-shadow: none;
             border-color: $primaryColor;
@@ -15,16 +16,14 @@
 }
 
 .input-icon {
-
     i {
         cursor: default;
         position: absolute;
         line-height: 1;
         text-align: center;
-        opacity: .5;
-        -webkit-transition: opacity .3s ease;
-        transition: opacity .3s ease;
-        text-align: center;
+        opacity: 0.5;
+        -webkit-transition: opacity 0.3s ease;
+        transition: opacity 0.3s ease;
         top: 11px;
         right: 20px;
         font-size: 15px;
@@ -45,10 +44,12 @@
     & + & {
         margin-top: 1rem;
     }
+
+    &--right {
+        text-align: right;
+    }
 }
 
 .custom-control .custom-control-input:focus ~ .custom-control-label::before {
     box-shadow: none;
 }
-
-

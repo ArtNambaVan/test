@@ -11,16 +11,70 @@ $( document ).ready(function() {
     });
 
 
-        // // 6 create an instance when the DOM is ready
-        // $('#jstree').jstree();
-        // // 7 bind to events triggered on the tree
-        // $('#jstree').on("changed.jstree", function (e, data) {
-        //   console.log(data.selected);
-        // });
-        // // 8 interact with the tree - either way is OK
-        // $('button').on('click', function () {
-        //   $('#jstree').jstree(true).select_node('child_node_1');
-        //   $('#jstree').jstree('select_node', 'child_node_1');
-        //   $.jstree.reference('#jstree').select_node('child_node_1');
-        // });
+    $('#jsTreeCategory').jstree({
+		'core' : {
+			'data' : [
+				{
+					"text" : "first root node",
+                    "state" : { "opened" : true },
+                    "a_attr" : {
+                        "class" : "category__rating"
+                    },
+					"children" : [
+                        { "text" : "Child node 1",
+                            "a_attr" : {
+                                "class" : "category__rating"
+                            },
+                         },
+
+                         { "text" : "Child node 2",
+                            "a_attr" : {
+                                "class" : "category__rating"
+                            },
+                         },
+
+                         { "text" : "Child node 3",
+                            "a_attr" : {
+                                "class" : "category__rating"
+                            },
+                         },
+
+                         { "text" : "Child node 4",
+                            "a_attr" : {
+                                "class" : "category__rating"
+                            },
+                         },
+
+                         { "text" : "Child node 5",
+                            "a_attr" : {
+                                "class" : "category__rating"
+                            },
+                         },
+
+						{ "text" : "Child node 6"}
+					]
+                },
+                {
+					"text" : "second root node",
+					"state" : { "opened" : true },
+					"children" : [
+						{
+							"text" : "Child node 1",
+							"state" : { "opened" : true },
+                            "icon" : "jstree-file",
+                            "children" : [
+                                {
+                                    "text" : "Child node 11"
+                                },
+                                { "text" : "Child node 22"}
+                            ]
+						},
+						{ "text" : "Child node 2"}
+					]
+				}
+			]
+		}
+	});
+
+    
 });

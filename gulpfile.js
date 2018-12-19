@@ -130,6 +130,7 @@ gulp.task('css_libs', function() {
             PATH.css_libs.in + 'clay.css',
             PATH.css_libs.in + 'bootstrap-select.css',
             PATH.css_libs.in + 'main.css',
+            PATH.css_libs.in + 'treeJS.css'
         ])
         //.pipe(concat('libs.css'))
         .pipe(gulp.dest(PATH.css_libs.out))

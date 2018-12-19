@@ -135,9 +135,44 @@
     }
 }
 
+.tree-heading {
+    &,
+    &:link,
+    &:hover {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        padding: 0.375rem 0.75rem;
+        border: 1px solid $primaryColor;
+        border-radius: 0.25rem;
+        text-decoration: none;
+    }
+}
+
 .category {
     padding-top: 10px;
     padding-bottom: 10px;
+
+    .jstree {
+        padding-top: 10px;
+        max-height: 390px;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .jstree-default .jstree-themeicon {
+        display: none;
+    }
+
+    &__rating {
+        &::after {
+            content: "R";
+            color: $colorGray;
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 12px;
+        }
+    }
 
     &__list {
         padding-top: 20px;
@@ -181,14 +216,14 @@
 
         &--positive {
             label {
-                background: url(../images/test1.png), transparent;
+                background: url(/images/emotion-happy.png), transparent;
                 background-size: cover;
                 background-position: 50% 50%;
                 background-repeat: no-repeat;
             }
 
             & input:checked ~ label {
-                background: url(../images/test1.png), #d0e9fa;
+                background: url(/images/emotion-happy.png), #d0e9fa;
                 background-size: cover;
                 background-position: 50% 50%;
                 background-repeat: no-repeat;
@@ -197,14 +232,14 @@
 
         &--neutral {
             label {
-                background: url(../images/test2.png), transparent;
+                background: url(/images/emotion-neutral.png), transparent;
                 background-size: cover;
                 background-position: 50% 50%;
                 background-repeat: no-repeat;
             }
 
             & input:checked ~ label {
-                background: url(../images/test2.png), #d0e9fa;
+                background: url(/images/emotion-neutral.png), #d0e9fa;
                 background-size: cover;
                 background-position: 50% 50%;
                 background-repeat: no-repeat;
@@ -213,14 +248,14 @@
 
         &--negative {
             label {
-                background: url(../images/test3.png), transparent;
+                background: url(/images/emotion-angry.png), transparent;
                 background-size: cover;
                 background-position: 50% 50%;
                 background-repeat: no-repeat;
             }
 
             & input:checked ~ label {
-                background: url(../images/test3.png), #d0e9fa;
+                background: url(/images/emotion-angry.png), #d0e9fa;
                 background-size: cover;
                 background-position: 50% 50%;
                 background-repeat: no-repeat;
@@ -238,6 +273,15 @@
             top: 8px;
             left: -21px;
         }
+    }
+}
+
+.delete-category {
+    &,
+    &:link,
+    &:hover {
+        display: inline-block;
+        text-decoration: none;
     }
 }
 
@@ -314,10 +358,6 @@
     width: 100%;
     background-color: transparent;
     border: 1px solid $borderColor;
-}
-
-.delete-category {
-    display: inline-block;
 }
 
 .message-item {

@@ -1,0 +1,31 @@
+.cims {
+    .btn {
+        padding: 10px 30px;
+        font-size: 14px;
+
+        &:active,
+        &:focus {
+            box-shadow: none;
+        }
+
+        &--primary {
+            &,
+            &:focus,
+            &:active {
+                background-color: $primaryColor;
+                color: $colorWhite;
+            }
+        }
+
+        &--secondary {
+            background-color: transparent;
+            color: $primaryColor;
+            border-color: $primaryColor;
+
+            &:active {
+                background-color: $primaryColor;
+                color: $colorWhite;
+            }
+        }
+    }
+}

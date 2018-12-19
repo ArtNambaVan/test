@@ -15,12 +15,12 @@
 
     <link rel="stylesheet" href="css/libs/main.css">
     <link rel="stylesheet" href="css/libs/bootstrap-select.css">
-     
+     <link rel="stylesheet" href="css/libs/treeJS.css">
     <link rel="stylesheet" href="css/custom.css">
     <script src="js/libs.js"></script>
     <script src="js/main.js"></script>
     
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
 
 </head>
 
@@ -110,9 +110,13 @@
                                             <div class="form-group">
                                                 <div class="row">
                                                     <div class="col-12">
-                                                        <div class="input-icon input-icon--left">
-                                                            <input class="form-control search" type="search" placeholder="Text search" aria-label="Text search">
-                                                            <i aria-hidden="true" class="dropdown-input-search"></i>
+                                                        <a aria-controls="categoryNameBody" aria-expanded="true" class="tree-heading" data-toggle="collapse" href="#categoryNameBody" id="categoryNameHeading" role="tab">
+                                                            select category
+                                                        </a>
+                                                        <div aria-labelledby="categoryNameHeading" class="panel-collapse category-wrapper collapse show" id="categoryNameBody" role="tabpanel">
+                                                            <div id="jsTreeCategory">
+                                                
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -133,7 +137,7 @@
                                                                 <option>AND</option>
                                                                 <option>OR</option>
                                                             </select>
-                                                            <a href="#" class="delete-category"><i class="fa fa-times"></i></a>
+                                                            <a href="#" class="delete-category"><i class="icon-remove"></i></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -152,7 +156,7 @@
                                                                 <option>AND</option>
                                                                 <option>OR</option>
                                                             </select>
-                                                            <a href="#" class="delete-category"><i class="fa fa-times"></i></a>
+                                                            <a href="#" class="delete-category"><i class="icon-remove"></i></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -171,7 +175,7 @@
                                                                 <option>AND</option>
                                                                 <option>OR</option>
                                                             </select>
-                                                            <a href="#" class="delete-category"><i class="fa fa-times"></i></a>
+                                                            <a href="#" class="delete-category"><i class="icon-remove"></i></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -210,7 +214,7 @@
                                                                 <option>AND</option>
                                                                 <option>OR</option>
                                                             </select>
-                                                            <a href="#" class="delete-category"><i class="fa fa-times"></i></a>
+                                                            <a href="#" class="delete-category"><i class="icon-remove"></i></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -244,11 +248,9 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group row">
-                                    <div class="col-7 offset-5">
-                                        <button class="btn btn-primary">Submit</button>
-                                        <button class="btn btn-default">Reset</button>
-                                    </div>
+                                <div class="form-group form-group--right">
+                                    <button class="btn btn--primary">Submit</button>
+                                    <button class="btn btn--secondary">Reset</button>
                                 </div>
                             </form>
                         </div>
@@ -311,7 +313,7 @@
                             </div>
                             <div class="message-item row">
 
-                                <div class="col-10 col-md-7">
+                                <div class="col-10 col-xl-7">
                                     <h3 class="message-item__heading">lorem ipsum dolor sit amet</h3>
                                     <p class="message-item__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
@@ -328,12 +330,13 @@
                                             <span class="label-item label-item-expand">translated</span>
                                         </span>
                                     </div>
+
                                 </div>
 
-                                <div class="col-2 col-md-1">
+                                <div class="col-2 col-xl-1">
                                     <img class="message-item__logo" src="images/message-logo.jpg" alt="message logo">
                                 </div>
-                                <div class="col-12 col-md-4">
+                                <div class="col-12 col-xl-4">
                                     <div class="message-item__info">
                                         
                                         <div class="category">
@@ -402,7 +405,7 @@
                                                 <i class="icon-globe"></i><a>URL</a>
                                             </li>
                                             <li class="access__item">
-                                                <i class="far fa-calendar-alt icon-calendar"></i><span>31.05.2018 23:59</span>
+                                                <i class="icon-calendar"></i><span>31.05.2018 23:59</span>
                                             </li>
                                             <li class="access__item">
                                                 <i class="icon-group"></i><span>251</span>
@@ -419,7 +422,7 @@
         </main>
         <footer class="footer">
             <div class="container-fluid">
-                <p class="footer__copyright">Copyright 2018 Consline AG</p>
+                <p class="footer__copyright">© Copyright 2018 Consline AG</p>
             </div>
         </footer>
     </div>
