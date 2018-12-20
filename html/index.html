@@ -19,8 +19,6 @@
     <link rel="stylesheet" href="css/custom.css">
     <script src="js/libs.js"></script>
     <script src="js/main.js"></script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
 
 </head>
 
@@ -29,46 +27,51 @@
     <div class="cims" id="wrapper">
         <header class="header">
             <div class="container-fluid">
-                <nav class="main-nav navbar-expand-md navbar-light">
+                <nav class="main-nav navbar-expand-lg navbar-light">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
+                    <div class="main-logo">
+                        <a class=""></a>
+                        <img class="main-logo__img" src="images/logo.jpg" alt="CIMS logo">
+                    </div>
                     <div class="navbar-collapse collapse main-nav__navigation" id="navbarSupportedContent">
                         <div class="main-nav__section main-nav__section--left">
-                            <div class="main-logo">
-                                <a class=""></a>
-                                <img class="main-logo__img" src="images/logo.jpg" alt="CIMS logo">
-                            </div>
+                            
                             <ul class="main-nav__list">
                                 <li class="main-nav__item">
-                                    <a class="main-nav__item-link " href="#">Home</a>
+                                    <a class="main-nav__link " href="#">Home</a>
                                 </li>
                                 <li class="main-nav__item">
-                                    <a class="main-nav__item-link active" href="#">Messages</a>
+                                    <a class="main-nav__link active" href="#">Messages</a>
                                 </li>
                                 <li class="main-nav__item">
-                                    <a class="main-nav__item-link " href="#">Analysis</a>
+                                    <a class="main-nav__link " href="#">Analysis</a>
                                 </li>
                                 <li class="main-nav__item">
-                                    <a class="main-nav__item-link " href="#">Reports</a>
+                                    <a class="main-nav__link " href="#">Reports</a>
                                 </li>
                                 <li class="main-nav__item">
-                                    <a class="main-nav__item-link " href="#">Newsletter</a>
+                                    <a class="main-nav__link " href="#">Newsletter</a>
                                 </li>
                             </ul>
 
                         </div>
 
                         <div class="main-nav__section main-nav__section--right">
-                            <li class="main-nav__item">
-                                <a class="main-nav__item-link" href="#">New Message</a>
-                            </li>
-                            <li class="main-nav__item">
-                                <a class="main-nav__item-link" href="#">Administrator</a>
-                            </li>
-                            <li class="main-nav__item">
-                                <a class="main-nav__item-link" href="#">Sign Out</a>
-                            </li>
+
+                            <ul class="main-nav__list">
+                                <li class="main-nav__item">
+                                    <a class="main-nav__link" href="#">New Message</a>
+                                </li>
+                                <li class="main-nav__item">
+                                    <a class="main-nav__link" href="#">Administrator</a>
+                                </li>
+                                <li class="main-nav__item">
+                                    <a class="main-nav__link" href="#">Sign Out</a>
+                                </li>
+                            </ul>
+                        
                         </div>
                     </div>
                 </nav>
@@ -111,9 +114,9 @@
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <a aria-controls="categoryNameBody" aria-expanded="true" class="tree-heading" data-toggle="collapse" href="#categoryNameBody" id="categoryNameHeading" role="tab">
-                                                            select category
+                                                            Select category
                                                         </a>
-                                                        <div aria-labelledby="categoryNameHeading" class="panel-collapse category-wrapper collapse show" id="categoryNameBody" role="tabpanel">
+                                                        <div aria-labelledby="categoryNameHeading" class="panel-collapse collapse show" id="categoryNameBody" role="tabpanel">
                                                             <div id="jsTreeCategory">
                                                 
                                                             </div>
@@ -400,15 +403,19 @@
                                         <ul class="access">
                                             <li class="access__item">
                                                 <i class="icon-home"></i><span>google.com</span>
+                                                <span class="access__name acess__name--url-name">google.com</span>
                                             </li>
                                             <li class="access__item">
-                                                <i class="icon-globe"></i><a>URL</a>
+                                                <i class="icon-globe"></i><a href="#">URL</a>
+                                                <a class="access__name acess__name--url-link">URL</a>
                                             </li>
                                             <li class="access__item">
                                                 <i class="icon-calendar"></i><span>31.05.2018 23:59</span>
+                                                <span class="access__name acess__name--time"></span>
                                             </li>
                                             <li class="access__item">
                                                 <i class="icon-group"></i><span>251</span>
+                                                <span class="access__name acess__name--views"></span>
                                             </li>
                                         </ul>
                                     </div>

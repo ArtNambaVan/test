@@ -10,7 +10,6 @@ $( document ).ready(function() {
         settingsPanel.hasClass(openPanel) ? settingsPanel.removeClass(openPanel) : settingsPanel.addClass(openPanel);
     });
 
-
     $('#jsTreeCategory').jstree({
 		'core' : {
 			'data' : [

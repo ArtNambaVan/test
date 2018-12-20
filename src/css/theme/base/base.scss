@@ -58,6 +58,12 @@ a {
 }
 
 .container-fluid {
+
+    @media (min-width: 992px) {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
     @media (min-width: 1200px) {
         padding-left: 50px;
         padding-right: 50px;

@@ -158,6 +158,9 @@
         max-height: 390px;
         overflow-x: hidden;
         overflow-y: auto;
+        box-shadow: 0 1px 10px rgba($color: #000,$alpha: 0.3);
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
     }
 
     .jstree-default .jstree-themeicon {
@@ -216,14 +219,14 @@
 
         &--positive {
             label {
-                background: url(/images/emotion-happy.png), transparent;
+                background: url(../images/emotion-happy.png), transparent;
                 background-size: cover;
                 background-position: 50% 50%;
                 background-repeat: no-repeat;
             }
 
             & input:checked ~ label {
-                background: url(/images/emotion-happy.png), #d0e9fa;
+                background: url(../images/emotion-happy.png), #d0e9fa;
                 background-size: cover;
                 background-position: 50% 50%;
                 background-repeat: no-repeat;
@@ -232,14 +235,14 @@
 
         &--neutral {
             label {
-                background: url(/images/emotion-neutral.png), transparent;
+                background: url(../images/emotion-neutral.png), transparent;
                 background-size: cover;
                 background-position: 50% 50%;
                 background-repeat: no-repeat;
             }
 
             & input:checked ~ label {
-                background: url(/images/emotion-neutral.png), #d0e9fa;
+                background: url(../images/emotion-neutral.png), #d0e9fa;
                 background-size: cover;
                 background-position: 50% 50%;
                 background-repeat: no-repeat;
@@ -248,14 +251,14 @@
 
         &--negative {
             label {
-                background: url(/images/emotion-angry.png), transparent;
+                background: url(../images/emotion-angry.png), transparent;
                 background-size: cover;
                 background-position: 50% 50%;
                 background-repeat: no-repeat;
             }
 
             & input:checked ~ label {
-                background: url(/images/emotion-angry.png), #d0e9fa;
+                background: url(../images/emotion-angry.png), #d0e9fa;
                 background-size: cover;
                 background-position: 50% 50%;
                 background-repeat: no-repeat;
@@ -404,10 +407,36 @@
 
     &__item {
         color: gray;
+
+        & + & {
+            margin-top: 0.5rem;
+        }
     }
 
     i {
         margin-right: 10px;
+    }
+
+    .access__name {
+        &::before {
+            margin-right: 0.8rem;
+        }
+        color: red;
+        &--url-name::before {
+            content: "&#xf015;";
+        }
+
+        &--url-name-url-link::before {
+            content: "&#xf0ac;";
+        }
+
+        &--time::before {
+            content: "&#xf073;";
+        }
+
+        &--views::before {
+            content: "&#xf0c0;";
+        }
     }
 }
 

@@ -1476,6 +1476,11 @@ a {
   .container {
     max-width: 1600px; } }
 
+@media (min-width: 992px) {
+  .container-fluid {
+    padding-left: 50px;
+    padding-right: 50px; } }
+
 @media (min-width: 1200px) {
   .container-fluid {
     padding-left: 50px;
@@ -1492,9 +1497,16 @@ a {
   padding-bottom: 15px;
   border-bottom: 1px solid #bfbfbf;
   background-color: #fff;
+  position: relative;
   z-index: 20; }
 
 .cims .main-nav {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin-top: 0; }
   .cims .main-nav__navigation {
     -webkit-box-align: end;
@@ -1502,18 +1514,42 @@ a {
         -ms-flex-align: end;
             align-items: flex-end;
     margin-top: 0; }
+    @media (max-width: 768px) {
+      .cims .main-nav__navigation {
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        left: 0;
+        background-color: #012b5b; } }
   .cims .main-nav__list {
     list-style-type: none; }
+    @media (max-width: 768px) {
+      .cims .main-nav__list {
+        width: 100%; } }
   .cims .main-nav__item {
     display: inline-block;
     padding-left: 1rem;
     padding-right: 1rem; }
+    @media (max-width: 768px) {
+      .cims .main-nav__item {
+        display: block;
+        padding: 0; }
+        .cims .main-nav__item + .cims .main-nav__item {
+          border-top: 1px solif #fff; } }
     .cims .main-nav__item + .cims .main-nav__item {
       margin-top: 0; }
     .cims .main-nav__item .active {
       color: #e98f18; }
+      @media (max-width: 768px) {
+        .cims .main-nav__item .active {
+          display: none; } }
   .cims .main-nav__link {
     display: inline-block; }
+    @media (max-width: 768px) {
+      .cims .main-nav__link {
+        display: block;
+        padding: 1rem 2rem;
+        color: #fff; } }
 
 .cims .main-nav__section {
   display: -webkit-box;
@@ -1532,8 +1568,8 @@ a {
   border-top: 1px solid #bfbfbf; }
   .footer__copyright {
     text-align: right;
-    padding-top: 0.5rem;
-    padding-bottom: 1rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
     margin-bottom: 0;
     color: rgba(1, 43, 91, 0.5); }
 
@@ -1877,7 +1913,11 @@ a {
     padding-top: 10px;
     max-height: 390px;
     overflow-x: hidden;
-    overflow-y: auto; }
+    overflow-y: auto;
+    -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px; }
   .category .jstree-default .jstree-themeicon {
     display: none; }
   .category__rating::after {
@@ -1912,32 +1952,32 @@ a {
       border-radius: 50%;
       vertical-align: middle; }
     .category__classification--positive label {
-      background: url(/images/emotion-happy.png), transparent;
+      background: url(../images/emotion-happy.png), transparent;
       background-size: cover;
       background-position: 50% 50%;
       background-repeat: no-repeat; }
     .category__classification--positive input:checked ~ label {
-      background: url(/images/emotion-happy.png), #d0e9fa;
+      background: url(../images/emotion-happy.png), #d0e9fa;
       background-size: cover;
       background-position: 50% 50%;
       background-repeat: no-repeat; }
     .category__classification--neutral label {
-      background: url(/images/emotion-neutral.png), transparent;
+      background: url(../images/emotion-neutral.png), transparent;
       background-size: cover;
       background-position: 50% 50%;
       background-repeat: no-repeat; }
     .category__classification--neutral input:checked ~ label {
-      background: url(/images/emotion-neutral.png), #d0e9fa;
+      background: url(../images/emotion-neutral.png), #d0e9fa;
       background-size: cover;
       background-position: 50% 50%;
       background-repeat: no-repeat; }
     .category__classification--negative label {
-      background: url(/images/emotion-angry.png), transparent;
+      background: url(../images/emotion-angry.png), transparent;
       background-size: cover;
       background-position: 50% 50%;
       background-repeat: no-repeat; }
     .category__classification--negative input:checked ~ label {
-      background: url(/images/emotion-angry.png), #d0e9fa;
+      background: url(../images/emotion-angry.png), #d0e9fa;
       background-size: cover;
       background-position: 50% 50%;
       background-repeat: no-repeat; }
@@ -2069,8 +2109,22 @@ a {
   margin-top: auto; }
   .access__item {
     color: gray; }
+    .access__item + .access__item {
+      margin-top: 0.5rem; }
   .access i {
     margin-right: 10px; }
+  .access .access__name {
+    color: red; }
+    .access .access__name::before {
+      margin-right: 0.8rem; }
+    .access .access__name--url-name::before {
+      content: "&#xf015;"; }
+    .access .access__name--url-name-url-link::before {
+      content: "&#xf0ac;"; }
+    .access .access__name--time::before {
+      content: "&#xf073;"; }
+    .access .access__name--views::before {
+      content: "&#xf0c0;"; }
 
 .label-success {
   background-color: rgba(12, 126, 6, 0.3);

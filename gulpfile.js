@@ -137,29 +137,6 @@ gulp.task('css_libs', function() {
     ;
   });
 
-gulp.task('less', function() {
-    // console.log('**************************');
-    // console.log('*** Starting LESS task ***');
-    // console.log('**************************');
-
-    return gulp.src(PATH.less.all)
-        .pipe(changed(PATH.less.out))
-        .pipe(plumber( function (err) {
-            console.log('***********************');
-            console.log('*** LESS TASK ERROR ***');
-            console.log('***********************');
-            console.log(err);
-            this.emit('end');
-        }))
-        .pipe(less({
-            paths   : [PATH.less.in],
-            plugins : [LESS_PREFIXER]
-        }))
-        .pipe(gulp.dest(PATH.less.out))
-        .pipe(browsersync.reload({ stream: true }))
-        ;
-});
-
 gulp.task('sass', function() {
     return gulp.src(PATH.sass.all)
         .pipe(sass.sync().on('error', sass.logError))
@@ -216,7 +193,8 @@ gulp.task('js_libs', function() {
             PATH.js_libs.in + 'jquery.js',
             PATH.js_libs.in + 'popper.js',
             PATH.js_libs.in + 'bootstrap.js',
-            PATH.js_libs.in + 'bootstrap-select.js'
+            PATH.js_libs.in + 'bootstrap-select.js',
+            PATH.js_libs.in + 'jstree.min.js'
         ])
         .pipe(concat('libs.js'))
         .pipe(changed(PATH.js_libs.out))
